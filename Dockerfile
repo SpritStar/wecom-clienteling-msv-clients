@@ -2,3 +2,4 @@ FROM node:16.17.1-slim
 WORKDIR /app
 EXPOSE 3000
 USER node
+
