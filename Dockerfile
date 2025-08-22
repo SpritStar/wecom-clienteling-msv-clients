@@ -1,0 +1,4 @@
+FROM node:16.13.1-slim
+WORKDIR /app
+EXPOSE 3000
+USER node
