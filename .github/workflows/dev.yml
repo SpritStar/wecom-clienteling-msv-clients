@@ -1,6 +1,9 @@
-name: "PRODUCTION"
+name: "DEVELOPMENT"
 
 on:
+  push:
+    branches:
+      - dev
   workflow_dispatch:
 
 jobs:
@@ -46,4 +49,4 @@ jobs:
       with:
         push: true
         platforms: linux/amd64
-        tags: "${{ vars.ALICLOUD_REGISTRY }}/${{ vars.ALICLOUD_REGISTRY_PROD_NAMESPACE }}/${{ steps.image_name.outputs.IMAGE_NAME }}:git-2-${{ steps.timestamp.outputs.timestamp }}"
+        tags: "${{ vars.ALICLOUD_REGISTRY }}/${{ vars.ALICLOUD_REGISTRY_DEV_NAMESPACE }}/${{ steps.image_name.outputs.IMAGE_NAME }}:git-2-${{ steps.timestamp.outputs.timestamp }}"

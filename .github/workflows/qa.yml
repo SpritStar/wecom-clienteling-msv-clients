@@ -1,4 +1,4 @@
-name: "PRODUCTION"
+name: "QA"
 
 on:
   workflow_dispatch:
@@ -46,4 +46,4 @@ jobs:
       with:
         push: true
         platforms: linux/amd64
-        tags: "${{ vars.ALICLOUD_REGISTRY }}/${{ vars.ALICLOUD_REGISTRY_PROD_NAMESPACE }}/${{ steps.image_name.outputs.IMAGE_NAME }}:git-2-${{ steps.timestamp.outputs.timestamp }}"
+        tags: "${{ vars.ALICLOUD_REGISTRY }}/${{ vars.ALICLOUD_REGISTRY_QA_NAMESPACE }}/${{ steps.image_name.outputs.IMAGE_NAME }}:git-2-${{ steps.timestamp.outputs.timestamp }}"
