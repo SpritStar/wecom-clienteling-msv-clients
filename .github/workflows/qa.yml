@@ -17,6 +17,7 @@ jobs:
       run: |
         echo "//npm.pkg.github.com/:_authToken=${NPMRC}" >> .npmrc
         curl http://ipinfo.io
+        cat Dockerfile
 
     - name: Generate timestamp
       id: timestamp
