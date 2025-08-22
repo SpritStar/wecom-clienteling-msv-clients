@@ -1,4 +1,4 @@
-FROM node:16.14.1-slim
+FROM node:16.15.1-slim
 WORKDIR /app
 EXPOSE 3000
 USER node
