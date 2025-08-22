@@ -2,6 +2,11 @@ name: "PRODUCTION"
 
 on:
   workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Specify tag to deploy'
+        required: true
+        type: string
 
 jobs:
   build:
@@ -10,6 +15,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v5
+      with:
+        ref: ${{ github.event.inputs.tag }}
 
     - name: Prepare
       run: |
