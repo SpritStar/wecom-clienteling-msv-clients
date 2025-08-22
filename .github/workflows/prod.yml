@@ -10,8 +10,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v5
-      with:
-        ref: main
 
     - name: Prepare
       run: |
@@ -46,6 +44,8 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v6
       with:
+        context: .
+        file: ./Dockerfile
         push: true
         platforms: linux/amd64
         tags: "${{ vars.ALICLOUD_REGISTRY }}/${{ vars.ALICLOUD_REGISTRY_PROD_NAMESPACE }}/${{ steps.image_name.outputs.IMAGE_NAME }}:git-2-${{ steps.timestamp.outputs.timestamp }}"
