@@ -15,6 +15,7 @@ jobs:
       uses: actions/checkout@v5
       with:
         ref: dev
+    
     - name: Prepare
       run: |
         echo "//npm.pkg.github.com/:_authToken=${NPMRC}" >> .npmrc
